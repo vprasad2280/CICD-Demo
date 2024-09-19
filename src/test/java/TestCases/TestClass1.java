@@ -1,5 +1,6 @@
 package TestCases;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -17,6 +18,7 @@ public class TestClass1 {
     public void LaunchApp(){
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver(options);
         driver.get("https://testauto8-dev-ed.develop.my.salesforce.com/");
         driver.manage().window().maximize();
