@@ -40,6 +40,13 @@ public class TestClass1 {
         System.out.println("actualTitle = " + actualTitle);
         Assert.assertEquals(actualTitle,expectedTitle);
     }
+    @Test
+    public void VerifyPageTitle1(){
+        String expectedTitle="Home | Salesforce1";
+        String actualTitle=  driver.getTitle();
+        System.out.println("actualTitle = " + actualTitle);
+        Assert.assertEquals(actualTitle,expectedTitle);
+    }
 
     @AfterTest
     public void tearDown(){
