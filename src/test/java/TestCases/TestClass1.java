@@ -26,11 +26,9 @@ public class TestClass1 {
     }
 
     @Test
-    public void LoginToApplication() throws InterruptedException {
+    public void LoginToApplication()  {
         driver.findElement(By.id("username")).sendKeys("testing@zensar.com.testauto");
         driver.findElement(By.id("password")).sendKeys("Automation1"+ Keys.ENTER);
-        //driver.findElement(By.id("Login")).click();
-        Thread.sleep(3000);
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
     }
     @Test
@@ -40,14 +38,7 @@ public class TestClass1 {
         System.out.println("actualTitle = " + actualTitle);
         Assert.assertEquals(actualTitle,expectedTitle);
     }
-    @Test
-    public void VerifyPageTitle1(){
-        String expectedTitle="Home | Salesforce1";
-        String actualTitle=  driver.getTitle();
-        System.out.println("actualTitle = " + actualTitle);
-        Assert.assertEquals(actualTitle,expectedTitle);
-    }
-
+    
     @AfterTest
     public void tearDown(){
         driver.quit();
